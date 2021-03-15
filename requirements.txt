@@ -1,0 +1,9 @@
+thonny>=3,<4
+crosshair-tool>=0.0.11,<2
+
+# Icontract is, strictly speaking, not required for this plug-in.
+# However, we include it in the package to make the life easier for
+# the beginners.
+# Please let us know by creating the issue on GitHub if this is undesired:
+# https://github.com/mristin/thonny-crosshair/issues/new
+icontract
