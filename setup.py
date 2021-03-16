@@ -12,7 +12,7 @@ with open(os.path.join(here, "requirements.txt"), encoding="utf-8") as fid:
 
 setuptools.setup(
     name="thonny-crosshair",
-    version="0.0.1a1",
+    version="0.0.1a2",
     author="Marko Ristin",
     author_email="marko@ristin.ch",
     description="Automatically verify Python code using CrossHair in Thonny.",
