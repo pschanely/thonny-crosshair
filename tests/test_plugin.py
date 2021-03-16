@@ -1,5 +1,6 @@
 """Test the plugin functions both public and private."""
 import os
+import sys
 import unittest
 import unittest.mock
 
@@ -82,7 +83,7 @@ class TestCheck(unittest.TestCase):
             editor.save_file.assert_called_once()
 
             shell.text.submit_command.assert_called_with(
-                cmd_line='! python -m crosshair check "some file.py"\n',
+                cmd_line=f'! {sys.executable} -m crosshair check "some file.py"\n',
                 tags=unittest.mock.ANY
             )
 
@@ -107,7 +108,7 @@ class TestCheck(unittest.TestCase):
             editor.save_file.assert_called_once()
 
             shell.text.submit_command.assert_called_with(
-                cmd_line='! python -m crosshair check "some file.py:1984"\n',
+                cmd_line=f'! {sys.executable} -m crosshair check "some file.py:1984"\n',
                 tags=unittest.mock.ANY
             )
 
@@ -131,7 +132,7 @@ class TestCheck(unittest.TestCase):
             editor.save_file.assert_called_once()
 
             shell.text.submit_command.assert_called_with(
-                cmd_line='! python -m crosshair watch "some file.py"\n',
+                cmd_line=f'! {sys.executable} -m crosshair watch "some file.py"\n',
                 tags=unittest.mock.ANY
             )
 
