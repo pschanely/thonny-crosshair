@@ -1,6 +1,7 @@
 """Automatically test Python code using CrossHair in Thonny."""
 import enum
 import subprocess
+import sys
 import tkinter.messagebox
 
 import thonny
@@ -65,19 +66,17 @@ def _execute(workbench: thonny.workbench.Workbench, command: _Command) -> None:
     editor.save_file()
 
     if command == _Command.CHECK:
-        cmd = ["!", "python", "-m", "crosshair", "check", filename]
+        cmd = ["!", sys.executable, "-m", "crosshair", "check", filename]
     elif command == _Command.CHECK_AT:
         selection = editor.get_code_view().get_selected_range()
+        # fmt: off
         cmd = [
-            "!",
-            "python",
-            "-m",
-            "crosshair",
-            "check",
+            "!", sys.executable, "-m", "crosshair", "check",
             f"{filename}:{selection.lineno}",
         ]
+        # fmt: on
     elif command == _Command.WATCH:
-        cmd = ["!", "python", "-m", "crosshair", "watch", filename]
+        cmd = ["!", sys.executable, "-m", "crosshair", "watch", filename]
     else:
         raise NotImplementedError(f"Unhandled command: {command}")
 
