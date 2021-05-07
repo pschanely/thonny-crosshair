@@ -1,5 +1,5 @@
 thonny>=3.0.0,<4
-crosshair-tool>=0.0.11,<2
+crosshair-tool>=0.0.13,<2
 
 # Icontract is, strictly speaking, not required for this plug-in.
 # However, we include it in the package to make the life easier for
